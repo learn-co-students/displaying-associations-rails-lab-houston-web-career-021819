@@ -1,0 +1,13 @@
+<h1><%= @artist.name %> </h1>
+<ul>
+    <% @songs.each do |song| %>
+      <% if song.artist_id == @artist.id %>
+        <%= link_to song.title, song%>
+        <% end %> 
+      <% end %>
+
+
+
+
+
+</ul>
