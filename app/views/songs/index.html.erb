@@ -1,0 +1,19 @@
+<h1>All Songs:</h1>
+<ul>
+
+<% @songs.each do |s|%>
+  <li>
+    <% if s.artist_id != nil &&  s.artist_id != 0 %>
+     <%= link_to "#{s.artist_name} - #{s.title}", s %>
+     <% end %>
+     <ul>
+      <li>
+          <% if s.artist_id != nil &&  s.artist_id != 0 %>
+     <%= link_to "#{s.artist_name}", "/artists/#{s.artist_id}" %>
+     <% end %>
+      </li>
+     </ul>
+  </li>
+
+<% end %>
+</ul>
