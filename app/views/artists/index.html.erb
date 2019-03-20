@@ -1,0 +1,7 @@
+<h1>Artists Index</h1>
+
+<tbody>
+    <%@artists.each do |a|%>
+    <tr><%= "#{a.name} - #{pluralize(a.songs.length, 'song')}" %></tr>
+    <%end%>
+</tbody>

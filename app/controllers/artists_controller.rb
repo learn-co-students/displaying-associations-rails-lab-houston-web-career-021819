@@ -1,8 +1,11 @@
 class ArtistsController < ApplicationController
   def index
+    @artists = Artist.all
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @songs = Song.select { |song| song.artist_id == @artist.id }
   end
 
   def new
@@ -41,6 +44,12 @@ class ArtistsController < ApplicationController
     flash[:notice] = "Artist deleted."
     redirect_to artists_path
   end
+
+  def songs
+    @artist = Artist.find(params[:id])
+    @songs = Song.select { |song| song.artist_id == @artist.id }
+  end
+
 
   private
 
